@@ -1,0 +1,271 @@
+{
+	"info": {
+		"_postman_id": "d6b333b8-aceb-c6a4-5a62-29e15e7c06e3",
+		"name": "Expense",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\": \"giathinh910@gmail.com\",\n\t\"password\": \"123456789\"\n}\n"
+				},
+				"url": {
+					"raw": "{{url}}/login",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Default",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"code": 200,
+					"_postman_previewlanguage": "",
+					"header": [],
+					"cookie": [],
+					"body": "{\"access_token\": \"123\"}"
+				}
+			]
+		},
+		{
+			"name": "register",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\": \"giathinh910@gmail.com\",\n\t\"name\": \"Thinh Bui\",\n\t\"password\": \"12345678\"\n}\n"
+				},
+				"url": {
+					"raw": "{{url}}/register",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "home",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "expenses",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{access_token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/expenses",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"expenses"
+					]
+				},
+				"description": "get all expenses"
+			},
+			"response": []
+		},
+		{
+			"name": "expenses",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer {{access_token}}"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/expenses/5e60b5cc35c68bb95a40c926",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"expenses",
+						"5e60b5cc35c68bb95a40c926"
+					]
+				},
+				"description": "get single expense"
+			},
+			"response": []
+		},
+		{
+			"name": "expenses",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer {{access_token}}"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"amount\": 200000,\n    \"category\": \"Travel\",\n    \"note\": \"Fuel\"\n}"
+				},
+				"url": {
+					"raw": "{{url}}/expenses/5e60b5cc35c68bb95a40c926",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"expenses",
+						"5e60b5cc35c68bb95a40c926"
+					]
+				},
+				"description": "get single expense"
+			},
+			"response": []
+		},
+		{
+			"name": "expenses",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer {{access_token}}"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{url}}/expenses/5e609e11a78021b5017a8b18",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"expenses",
+						"5e609e11a78021b5017a8b18"
+					]
+				},
+				"description": "get single expense"
+			},
+			"response": []
+		},
+		{
+			"name": "expenses",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{access_token}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"amount\": \"100000\",\n\t\"category\": \"Travel\",\n\t\"note\": \"Fuel\"\n}"
+				},
+				"url": {
+					"raw": "{{url}}/expenses",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"expenses"
+					]
+				},
+				"description": "get all expenses"
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "f9d9527c-01a6-48d1-bc85-9f667c949b7a",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "a0daed76-8523-4e5c-9db2-d4c39d853120",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
